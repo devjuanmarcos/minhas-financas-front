@@ -1,0 +1,435 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* BRANCO  */
+    --var-branco-100: 255, 255, 255;
+
+    /* CINZA  */
+    --var-cinza-400: 76, 76, 76;
+    --var-cinza-500: 63, 63, 63;
+    --var-cinza-600: 56, 56, 56;
+    --var-cinza-800: 56, 56, 56;
+
+    /* VERDE  */
+    --var-verde-50: 241, 252, 248;
+    --var-verde-300: 50, 163, 139;
+    --var-verde-400: 54, 173, 150;
+    --var-verde-600: 26, 135, 114;
+
+    /* background colors */
+    --var-background-principal: 253, 253, 253;
+    --var-marca-50: 241, 252, 248;
+    --var-marca-65: 231, 251, 244;
+    --var-marca-80: 218, 249, 239;
+    --var-marca-100: 208, 247, 234;
+    --var-marca-100-08: 208, 247, 234, 0.9;
+    --var-marca-200: 162, 237, 215;
+    --var-marca-300: 107, 221, 191;
+    --var-marca-400: 54, 179, 150;
+    --var-marca-500: 35, 169, 140;
+    --var-marca-600: 26, 135, 114;
+    --var-marca-700: 25, 108, 93;
+    --var-marca-800: 24, 87, 76;
+    --var-marca-900: 25, 72, 64;
+    --var-marca-950: 8, 43, 38;
+
+    /* text colors */
+    --var-text-branco: 224, 242, 241;
+    --var-text-cinza-claro: 88, 88, 88;
+    --var-text-cinza-escuro: 56, 56, 56;
+    --var-text-verde-claro: 107, 221, 191;
+    --var-text-verde-medio: 35, 169, 140;
+    --var-text-verde-escuro: 26, 135, 114;
+
+    /* Shadcn configuration */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    /* BRANCO  */
+    --var-branco-100: 255, 255, 255;
+
+    /* CINZA  */
+    --var-cinza-400: 76, 76, 76;
+    --var-cinza-500: 63, 63, 63;
+    --var-cinza-600: 56, 56, 56;
+    --var-cinza-800: 255, 255, 255;
+
+    /* VERDE  */
+    --var-verde-50: 241, 252, 248;
+    --var-verde-300: 50, 163, 139;
+    --var-verde-400: 54, 173, 150;
+    --var-verde-600: 26, 135, 114;
+
+    --var-background-principal: 10, 10, 10;
+    --var-marca-50: 36, 37, 37;
+    --var-marca-65: 35, 36, 36;
+    --var-marca-80: 34, 36, 36;
+    --var-marca-100: 36, 36, 36;
+    --var-marca-100-08: 34, 37, 36, 0.9;
+    --var-marca-200: 31, 36, 35;
+    --var-marca-300: 28, 35, 33;
+    --var-marca-400: 25, 32, 30;
+    --var-marca-500: 24, 31, 29;
+    --var-marca-600: 22, 29, 27;
+    --var-marca-700: 21, 27, 25;
+    --var-marca-800: 21, 25, 24;
+    --var-marca-900: 20, 24, 23;
+    --var-marca-950: 18, 21, 20;
+
+    /* text colors */
+    --var-text-cinza-escuro: 255, 255, 255;
+    --var-text-cinza-claro: 255, 255, 255;
+    --var-text-branco: 35, 37, 36;
+    --var-text-verde-claro: 195, 241, 226;
+    --var-text-verde-medio: 77, 192, 167;
+    --var-text-verde-escuro: 161, 201, 190;
+
+    /* Shadcn configuration */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+
+  * {
+    -webkit-transition: background-color 0.3s linear;
+    -moz-transition: background-color 0.3s linear;
+    -o-transition: background-color 0.3s linear;
+    -ms-transition: background-color 0.3s linear;
+    transition: background-color 0.3s linear;
+  }
+
+  .h1-bold {
+    font-weight: bold;
+    font-size: 2.375rem;
+    line-height: 2.875rem;
+  }
+
+  .h2-semibold {
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2.625rem;
+  }
+
+  .top-title-medium {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.375rem;
+  }
+
+  .title-card-medium {
+    font-weight: 500;
+    font-size: 1.375rem;
+  }
+
+  .paragraph-card {
+    font-size: 0.875rem;
+    font-weight: 132%;
+  }
+
+  .paragraph-banner {
+    font-weight: normal;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .cta {
+    font-size: 0.875rem;
+    font-weight: 132%;
+    color: rgb(var(--var-verde-300));
+  }
+
+  @media (max-width: 480px) {
+    .h1-bold {
+      font-size: 2rem;
+      line-height: 2.375rem;
+    }
+  }
+
+  body {
+    color: rgb(var(--var-text-cinza-escuro));
+    background-color: rgb(var(--var-background-principal));
+    font-family: var(--font-montserrat);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.container.collapsed {
+  --sidebar-width: 4.25rem;
+
+  @media (max-width: 480px) {
+    --sidebar-width: 0rem;
+  }
+}
+
+.header {
+  grid-area: header;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.main {
+  grid-area: main;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding-inline: 100px;
+}
+
+.blur-up {
+  filter: blur(5px);
+  transition: filter 0.3s ease-in-out;
+}
+
+.blur-up:not([data-loaded]) {
+  filter: blur(5px);
+}
+
+.blur-up[data-loaded] {
+  filter: blur(0);
+}
+
+.embla {
+  max-width: 60rem;
+  margin: auto;
+  --slide-height: 19rem;
+  --slide-spacing: 1rem;
+  --slide-size: 55%;
+}
+
+.embla__viewport {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+
+.embla__slide {
+  transform: translate3d(0, 0, 0);
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+  padding-left: var(--slide-spacing);
+}
+
+.embla__slide__number {
+  box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+  border-radius: 1.8rem;
+  font-size: 4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--slide-height);
+  user-select: none;
+}
+
+.embla__controls {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-content: space-between;
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+}
+
+.embla__buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.embla__button {
+  -webkit-tap-highlight-color: rgba(var(--primary));
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+  width: 3.6rem;
+  height: 3.6rem;
+  z-index: 1;
+  border-radius: 50%;
+  color: var(--text-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.embla__button:disabled {
+  color: var(--detail-high-contrast);
+}
+
+.embla__button__svg {
+  width: 35%;
+  height: 35%;
+}
+
+.embla__dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: calc((2.6rem - 1.4rem) / 2 * -1);
+}
+
+.embla__dot {
+  -webkit-tap-highlight-color: rgba(var(--primary));
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 2.6rem;
+  height: 2.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.embla__dot:after {
+  box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  content: "";
+}
+
+.embla__dot--selected:after {
+  box-shadow: inset 0 0 0 0.2rem var(--text-body);
+}
+
+.embla__slide__number {
+  backface-visibility: hidden;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-inline: 20px;
+  }
+}
+
+.custom-transform {
+  transform: none !important; /* Sobrescreve o transform do plugin */
+  top: 100% !important;
+}
+/* Estilos globais para o controle deslizante de tamanho de fonte */
+input[type="range"] {
+  -webkit-appearance: none; /* Remove o estilo padrão do controle deslizante */
+  width: 100%;
+  height: 2px; /* Espessura do trilho do controle deslizante */
+  background: rgb(var(--var-cinza-800)); /* Cor do trilho do controle deslizante */
+  border-radius: 5px; /* Cantos arredondados */
+  cursor: pointer; /* Muda o cursor ao passar sobre o controle */
+  outline: none; /* Remove o contorno padrão */
+}
+
+/* Estilo para o "thumb" (cursor) do controle deslizante */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove o estilo padrão do "thumb" */
+  width: 4px; /* Largura do "thumb" */
+  height: 20px; /* Altura do "thumb" */
+  border-radius: 12px; /* "thumb" arredondado */
+  background: rgb(var(--var-cinza-800)); /* Cor do "thumb" */
+  cursor: pointer; /* Muda o cursor ao passar sobre o "thumb" */
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Sombra para o "thumb" */
+}
+
+/* Para navegadores que não são WebKit (Firefox, etc.) */
+input[type="range"]::-moz-range-thumb {
+  width: 4px; /* Largura do "thumb" */
+  height: 20px; /* Altura do "thumb" */
+  border-radius: 12px; /* "thumb" arredondado */
+  background: rgb(var(--var-cinza-800)); /* Cor do "thumb" */
+  cursor: pointer; /* Muda o cursor ao passar sobre o "thumb" */
+}
+
+/* Adicionando estilo para o "thumb" no IE */
+input[type="range"]::-ms-thumb {
+  width: 20px; /* Largura do "thumb" */
+  height: 20px; /* Altura do "thumb" */
+  border-radius: 50%; /* "thumb" arredondado */
+  background: rgb(var(--var-cinza-800)); /* Cor do "thumb" */
+  cursor: pointer; /* Muda o cursor ao passar sobre o "thumb" */
+}
+
+/* Estilo para o trilho do controle deslizante em IE */
+input[type="range"]::-ms-track {
+  background: rgb(var(--var-cinza-800)); /* Cor do trilho do controle deslizante */
+  border-color: transparent; /* Remove a borda do trilho */
+  color: transparent; /* Torna a cor do trilho transparente */
+}
