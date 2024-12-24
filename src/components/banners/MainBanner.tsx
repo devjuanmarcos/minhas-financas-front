@@ -1,7 +1,6 @@
 "use client";
 
 import React, { FC, memo } from "react";
-import { Button } from "../button/Button";
 import TextsVariants from "../texts/TextsVariants";
 import Image from "next/image";
 
@@ -29,7 +28,6 @@ const MainBanner: FC = () => {
           <div className="max-w-[40.9375rem] mt-4">
             <TextsVariants variant="titleBold" text="Coloque aqui a descrição do Main Banner" textCenter={true} />
           </div>
-          <Button text="SOBRE NÓS" width="fit" />
         </div>
         <div className="w-full absolute bottom-0">
           <Image
