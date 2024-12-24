@@ -19,7 +19,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@banners/*": ["./src/components/banners/*"]
+      "@banners/*": ["./src/components/banners/*"],
+      "@ui/*": ["./src/components/ui/*"]
     },
     "types": ["@serwist/next/typings"]
   },

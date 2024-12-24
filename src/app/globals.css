@@ -12,6 +12,7 @@
     --popover-foreground: 222.2 84% 4.9%;
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
+    --primary-hover: 222.2 47.4% 11.2%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
@@ -32,14 +33,15 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 253, 43%, 4%;
+    --foreground: 0, 0%, 100%;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
+    --primary: 253, 91%, 58%;
     --primary-foreground: 222.2 47.4% 11.2%;
+    --primary-hover: 253, 67%, 34%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
@@ -48,7 +50,7 @@
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
+    --border: 215, 28%, 17%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
     --chart-1: 220 70% 50%;
@@ -66,51 +68,28 @@
     transition: background-color 0.3s linear;
   }
 
-  .h1-bold {
+  .title_01 {
     font-weight: bold;
-    font-size: 2.375rem;
-    line-height: 2.875rem;
+    font-size: 1.5rem;
   }
 
-  .h2-semibold {
-    font-weight: 600;
-    font-size: 2rem;
-    line-height: 2.625rem;
-  }
-
-  .top-title-medium {
-    font-weight: 500;
+  .title_02 {
+    font-weight: bold;
     font-size: 1rem;
-    line-height: 1.375rem;
   }
 
-  .title-card-medium {
+  .title_03 {
     font-weight: 500;
-    font-size: 1.375rem;
+    font-size: 0.875rem;
+  }
+
+  .paragraph_01 {
+    font-size: 0.75rem;
   }
 
   .paragraph-card {
     font-size: 0.875rem;
     font-weight: 132%;
-  }
-
-  .paragraph-banner {
-    font-weight: normal;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
-  .cta {
-    font-size: 0.875rem;
-    font-weight: 132%;
-    color: rgb(var(--var-verde-300));
-  }
-
-  @media (max-width: 480px) {
-    .h1-bold {
-      font-size: 2rem;
-      line-height: 2.375rem;
-    }
   }
 }
 

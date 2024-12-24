@@ -1,9 +1,6 @@
 import { NextAuthConfig } from "next-auth";
 import CredentialProvider from "next-auth/providers/credentials";
 import GithubProvider from "next-auth/providers/github";
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_ANON_KEY!);
 
 const authConfig: NextAuthConfig = {
   providers: [
@@ -28,15 +25,13 @@ const authConfig: NextAuthConfig = {
   },
   callbacks: {
     async jwt({ token, account }) {
-      if (account?.provider === "github" && account?.access_token) {
+      if (account?.access_token) {
         token.supabaseAccessToken = account.access_token;
       }
       return token;
     },
     async session({ session, token }) {
-      if (token.supabaseAccessToken) {
-        session.supabaseAccessToken = token.supabaseAccessToken as any;
-      }
+      session.supabaseAccessToken = token.supabaseAccessToken as any;
       return session;
     },
   },
