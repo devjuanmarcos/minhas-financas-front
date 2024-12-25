@@ -27,12 +27,10 @@ api.interceptors.request.use(
   async (config: any) => {
     try {
       const { accessToken, refreshToken } = await getAuthTokens();
-      console.log(accessToken, refreshToken);
-
       config.headers = {
         ...config.headers,
-        ...(accessToken ? { "supabase.token": accessToken } : {}),
-        ...(refreshToken ? { "supabase.refresh_token": refreshToken } : {}),
+        ...(accessToken ? { supabase_token: accessToken } : {}),
+        ...(refreshToken ? { supabase_refresh_token: refreshToken } : {}),
       };
     } catch (error) {
       console.error("Erro ao obter a sessão:", error);

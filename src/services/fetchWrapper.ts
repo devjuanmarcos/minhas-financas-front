@@ -40,7 +40,6 @@ const baseURL = process.env.BASE_URL || "";
 
 async function fetchWrapper<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
   const { accessToken, refreshToken } = await getAuthTokens();
-  console.log(accessToken, refreshToken);
 
   const headers: HeadersInit = {
     "Content-Type": "application/json",
@@ -48,14 +47,12 @@ async function fetchWrapper<T>(endpoint: string, options: RequestInit = {}): Pro
     Pragma: "no-cache",
     Expires: "0",
     ...(options.headers ? (options.headers as Record<string, string>) : {}),
-    ...(accessToken ? { "supabase.token": accessToken } : {}),
-    ...(refreshToken ? { "supabase.refresh_token": refreshToken } : {}),
+    ...(accessToken ? { supabase_token: accessToken } : {}),
+    ...(refreshToken ? { supabase_refresh_token: refreshToken } : {}),
   };
 
   const cacheBuster = `&_=${new Date().getTime()}`;
   const urlWithCacheBuster = `${baseURL}${endpoint}${endpoint.includes("?") ? "&" : "?"}${cacheBuster}`;
-
-  console.log("Headers enviados:", headers);
 
   try {
     const response = await fetch(urlWithCacheBuster, {

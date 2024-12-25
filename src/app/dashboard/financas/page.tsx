@@ -8,7 +8,6 @@ export const metadata = {
 
 export default async function page() {
   const user = await getUser();
-
   if (!user) {
     return redirect("/");
   } else {

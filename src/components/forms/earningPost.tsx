@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Form, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Switch } from "@/components/ui/switch";
 import { useFormState } from "react-dom";
-import { dataSubCategoriesAction, onSubmitExpenseAction, SubCategorieType } from "@/app/actions/dataFinanceActions";
+import { dataSubCategoriesAction, onSubmitEarningAction, SubCategorieType } from "@/app/actions/dataFinanceActions";
 import { useToastFeedback } from "@/hooks/useToastFeedback";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "../ui/select";
 
@@ -22,14 +22,13 @@ export const ExpensePostFormSchema = z.object({
 
 type FormData = z.infer<typeof ExpensePostFormSchema>;
 
-const ExpensePostForm = () => {
-  const [state, formAction] = useFormState(onSubmitExpenseAction, {
+const EarningPostForm = () => {
+  const [state, formAction] = useFormState(onSubmitEarningAction, {
     message: "",
     success: false,
   });
   const { loading, setLoading } = useToastFeedback({ state });
   const [subCategories, setSubCategories] = React.useState<SubCategorieType[]>([]);
-
   const formRef = React.useRef<HTMLFormElement>(null);
   const form = useForm<FormData>({
     resolver: zodResolver(ExpensePostFormSchema),
@@ -39,7 +38,7 @@ const ExpensePostForm = () => {
   React.useEffect(() => {
     async function fetch() {
       try {
-        const res = await dataSubCategoriesAction(2);
+        const res = await dataSubCategoriesAction(1);
         setSubCategories(res.data);
       } catch (error) {
         console.error("Error:", error);
@@ -167,10 +166,10 @@ const inputs = [
   },
   {
     id: "fixo",
-    label: "Gasto fixo?",
+    label: "Ganho fixo?",
     type: "boolean",
     placeholder: "",
   },
 ];
 
-export default ExpensePostForm;
+export default EarningPostForm;

@@ -11,9 +11,23 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@ui/dropdown-menu";
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
+import { useTransition } from "react";
+import { signOutAction } from "@/app/actions/user";
+import { useRouter } from "next/navigation";
+
 export function UserNav() {
   const { data: session } = useSession();
+  const [isPending, startTransition] = useTransition();
+  const router = useRouter();
+
+  const handleClickLoginButton = () => {
+    startTransition(async () => {
+      await signOutAction();
+      router.push("/login");
+    });
+  };
+
   if (session) {
     return (
       <DropdownMenu>
@@ -49,13 +63,10 @@ export function UserNav() {
             <DropdownMenuItem>New Team</DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
-          <DropdownMenuItem
-            onClick={() => {
-              signOut();
-              console.log("Logging out");
-            }}
-          >
-            Log out
+          <DropdownMenuItem>
+            <Button type="button" loading={isPending} onClick={() => handleClickLoginButton()}>
+              Log out
+            </Button>
             <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuContent>
