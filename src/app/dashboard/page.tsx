@@ -1,11 +1,12 @@
 "use server";
 
-import { auth } from "../../../auth";
+import { getUser } from "@/lib/auth";
 import { redirect } from "next/navigation";
 
 export default async function Home() {
-  const session = await auth();
-  if (!session?.user) {
+  const user = getUser();
+
+  if (!user) {
     return redirect("/");
   } else {
     redirect("/dashboard/financas");

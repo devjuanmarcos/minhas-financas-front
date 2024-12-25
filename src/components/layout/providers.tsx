@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import { SessionProvider, SessionProviderProps } from "next-auth/react";
 import { WindowSizeProvider } from "@/context/WindowSizeContext";
 import { HtmlFontSizeProvider } from "@/context/HtmlFontSizeContext";
+import { UpdateProvider } from "@/context/UpdateContext";
 export default function Providers({
   session,
   children,
@@ -16,7 +17,9 @@ export default function Providers({
       <WindowSizeProvider>
         <HtmlFontSizeProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <SessionProvider session={session}>{children}</SessionProvider>
+            <UpdateProvider>
+              <SessionProvider session={session}>{children}</SessionProvider>
+            </UpdateProvider>
           </ThemeProvider>
         </HtmlFontSizeProvider>
       </WindowSizeProvider>

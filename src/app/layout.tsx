@@ -2,10 +2,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Script from "next/script";
 import Providers from "@/components/layout/providers";
-import { auth } from "../../auth";
 import { GeistSans } from "geist/font/sans";
-
-import { Toaster } from "@/components/ui/sonner";
+import { Toaster } from "sonner";
+import { auth } from "../../auth";
 
 const APP_NAME = "Biomob";
 const APP_DEFAULT_TITLE = "Biomob";
@@ -39,8 +38,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <Script defer data-domain="biomob.org" src="https://plausible.biomob.app/js/script.js" />
       <body className={"overflow-hidden"}>
         <Providers session={session}>
-          <Toaster />
           {children}
+          <Toaster />
         </Providers>
       </body>
     </html>

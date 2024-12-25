@@ -1,7 +1,5 @@
-"use server";
-
 import axios, { AxiosInstance } from "axios";
-import { auth } from "../../auth";
+import { getAuthTokens } from "./fetchWrapper";
 
 export type LoginResProps = {
   access_token: string;
@@ -28,16 +26,17 @@ const api: AxiosInstance = axios.create({
 api.interceptors.request.use(
   async (config: any) => {
     try {
-      const session = await auth();
-      console.log(session);
-      if (session?.supabaseAccessToken) {
-        config.headers = {
-          ...config.headers,
-          Authorization: `Bearer ${session.supabaseAccessToken}`,
-        };
-      }
+      const { accessToken, refreshToken } = await getAuthTokens();
+      console.log(accessToken, refreshToken);
+
+      config.headers = {
+        ...config.headers,
+        ...(accessToken ? { "supabase.token": accessToken } : {}),
+        ...(refreshToken ? { "supabase.refresh_token": refreshToken } : {}),
+      };
     } catch (error) {
       console.error("Erro ao obter a sessão:", error);
+      // Caso a obtenção dos tokens falhe, você pode tratar aqui, talvez redirecionando para a página de login
     }
 
     return config;
