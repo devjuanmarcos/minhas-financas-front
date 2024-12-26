@@ -12,7 +12,7 @@ const APP_TITLE_TEMPLATE = "%s";
 const APP_DESCRIPTION = "Biomob!";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_FRONTEND_URL || "http://localhost:3000"),
+  metadataBase: new URL(process.env.FRONTEND_URL || "http://localhost:3000"),
   applicationName: APP_NAME,
   title: {
     default: APP_DEFAULT_TITLE,
